@@ -6,32 +6,23 @@
   :root {
     --background: 270, 100%, 98%;
     --foreground: 270, 6%, 6%;
-
-
     --card: 211, 60%, 93%;
-    --card-foreground:270, 100%, 98%;
- 
-    --popover: 211, 60%, 93%;
-    --popover-foreground:270, 100%, 98%;
- 
+    --card-foreground: 216, 100%, 78%;
+    --popover: 33, 91%, 96%;
+    --popover-foreground: 270, 100%, 98%;
     --primary: 249, 91%, 68%;
-    --primary-foreground: 210 40% 98%;
- 
-    --secondary: 216, 100%, 78%;
-    --secondary-foreground: 211, 60%, 93%;
- 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --accent: 348, 89%, 53%;
-    --accent-foreground: 317, 100%, 96%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --primary-foreground: 270, 100%, 98%;
+    --secondary: 127, 100%, 73%;
+    --secondary-foreground: 119, 96%, 81%;
+    --muted: 0, 0%, 18%;
+    --muted-foreground: 227, 8%, 33%;
+    --accent: 214, 100%, 58%;
+    --accent-foreground: 203, 100%, 95%;
+    --destructive: 348, 89%, 53%;
+    --destructive-foreground: 317, 100%, 96%;
+    --border: 237, 14%, 27%;
+    --input: 228, 27%, 25%;
+    --ring: 228, 27%, 19%;
  
     --radius: 0.5rem;
   }
@@ -74,4 +65,7 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+.test{
+  background-color: hsl(180, 100%, 50%);
 }
