@@ -113,6 +113,13 @@ const Aside = ({ setDisplayContent }: AsideProps) => {
               >
                 <span>Font Sizes</span>
               </Button>
+              <Button
+                variant="link"
+                size={"link"}
+                onClick={() => setDisplayContent("favcolors")}
+              >
+                <span>Colors</span>
+              </Button>
             </div>
           )
         }
