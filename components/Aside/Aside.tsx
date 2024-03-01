@@ -1,14 +1,17 @@
 "use client"
 import { Button } from '@/components/ui/button';
+import { buttonPointerProps } from '@/lib/types/AsideTypes';
 import { cn } from '@/lib/utils';
 import { ChevronsLeft, ChevronsRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import React, { ElementRef, useEffect, useRef, useState } from 'react'
+import React, { ElementRef, useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
+import { ScrollShadow } from "@nextui-org/react";
 interface AsideProps {
   setDisplayContent: React.Dispatch<React.SetStateAction<string>>;
+  buttonPointers: buttonPointerProps[]
 }
-const Aside = ({ setDisplayContent }: AsideProps) => {
+const Aside = ({ setDisplayContent, buttonPointers }: AsideProps) => {
   const isMobile = useMediaQuery("(max-width: 720px)")
   const pathname = usePathname();
   //States
@@ -72,6 +75,7 @@ const Aside = ({ setDisplayContent }: AsideProps) => {
       setTimeout(() => setIsResetting(false), 300)
     }
   }
+  const nice = "text-green-600"
   return (
     <>
       <aside
@@ -98,38 +102,34 @@ const Aside = ({ setDisplayContent }: AsideProps) => {
         {
           !isCollapsed && (
             <div className='flex flex-col w-full mt-10 pr-3 gap-2 transition-all duration-300'>
-              <Button
-                onClick={() => setDisplayContent("colors")}
-                variant="link"
-                size={"link"}
-                className="text-left"
-              >
-                <span>Color Pallet</span>
-              </Button>
-              <Button
-                variant="link"
-                size={"link"}
-                onClick={() => setDisplayContent("fontsizes")}
-              >
-                <span>Font Sizes</span>
-              </Button>
-              <Button
-                variant="link"
-                size={"link"}
-                onClick={() => setDisplayContent("favcolors")}
-              >
-                <span>Colors</span>
-              </Button>
+              <ScrollShadow hideScrollBar className="w-full h-screen" visibility='bottom'>
+
+                {
+                  buttonPointers.map((pointer) => (
+                    <Button
+                      key={pointer.id}
+                      variant={"link"}
+                      size="link"
+                      onClick={() => setDisplayContent(pointer.onClickValue)}
+                      className={`text-left truncate ${pointer.customStyle}`}
+
+                    >
+                      {pointer.label}
+                    </Button>
+                  )
+                  )
+                }
+              </ScrollShadow>
             </div>
           )
         }
       </aside>
       {
-        isCollapsed && (
+        !isResetting && isCollapsed && (
           <div
             role={"button"}
             onClick={resetWidth}
-            className='h-7 w-7 flex items-center justify-center bg-secondary-foreground hover:cursor-pointer'
+            className='absolute left-0 h-7 w-7 flex items-center justify-center bg-secondary-foreground hover:cursor-pointer'
           >
             <ChevronsRight className='h-4 w-4' />
           </div>

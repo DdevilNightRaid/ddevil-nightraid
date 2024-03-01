@@ -15,6 +15,9 @@ const Navbar = () => {
         <Link href={'/'}>
           <span>Site</span>
         </Link>
+        <Link href={'/components'}>
+          <span>Components</span>
+        </Link>
         <Link href={'/color-picker'}>
           <span>Color Picker</span>
         </Link>

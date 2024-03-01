@@ -15,7 +15,7 @@ const ColorCard = (
     }
     return (
         <div
-            className='h-[16rem] w-[12rem] border flex flex-col items-center p-4 rounded-lg'
+            className='h-[16rem] w-[12rem] border flex flex-col items-center p-4 rounded-lg bg-background'
         >
             <div
                 className={cn(`h-[12rem] w-[10rem] border bg-[${colorCode}] rounded-sm`)}

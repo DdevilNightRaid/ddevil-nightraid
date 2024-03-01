@@ -5,8 +5,8 @@ interface InHslProps {
     colorValues: ColorValue[]
 }
 const InHsl = ({ colorValues }: InHslProps) => {
-  return (
-    <section className='flex flex-col gap-4 border p-4'>
+    return (
+        <section className='flex flex-col gap-4 border p-4'>
             <div className='flex flex-col'>
                 <span>--background: {hexToHsl(colorValues.find((i) => i.id === 0)?.colorCode || "")};</span>
                 <span>--foreground: {hexToHsl(colorValues.find((i) => i.id === 1)?.colorCode || "")};</span>
@@ -45,7 +45,7 @@ const InHsl = ({ colorValues }: InHslProps) => {
                 <span>--ring: {hexToHsl(colorValues.find((i) => i.id === 18)?.colorCode || "")};</span>
             </div>
         </section>
-  )
+    )
 }
 
 export default InHsl
