@@ -3,22 +3,21 @@ import { Boxes } from '@/components/acertUI/background-boxes'
 import Aside from '@/components/Aside/Aside'
 import DispalySection from '@/components/DisplaySection/DispalySection'
 import { Button } from '@/components/ui/button'
-import { ComponentsAsideValues, ComponentsDisplayValues } from '@/lib/constants/ComponentAsideValues'
+import { FeatureAsideValues, FeatureDisplayValues } from '@/lib/constants/FeatureValues'
 import MaxWidthWrapper from '@/lib/MaxWidthWrapper'
 import { cn } from '@/lib/utils'
 import React, { useState } from 'react'
-
 const page = () => {
-  const [displayContent, setDisplayContent] = useState("maxwidthwrapper");
+  const [displayContent, setDisplayContent] = useState("nodemailer");
   const [display, setDisplay] = useState<boolean>(false);
   return (
     <div className='h-full'>
       {
         display ? (
           <div className='flex min-h-screen justify-between gap-10 dark:bg-black dark:bg-grid-white/[0.1] bg-grid-black/[0.1] transition-all duration-300 ease-in'>
-            <Aside setDisplayContent={setDisplayContent} buttonPointers={ComponentsAsideValues} />
+            <Aside setDisplayContent={setDisplayContent} buttonPointers={FeatureAsideValues} />
             <MaxWidthWrapper className='m-2 px-1 bg-background border'>
-              <DispalySection displayContent={displayContent} displayValues={ComponentsDisplayValues} />
+              <DispalySection displayContent={displayContent} displayValues={FeatureDisplayValues} />
             </MaxWidthWrapper>
           </div>
         ) : (
@@ -39,7 +38,7 @@ const page = () => {
               </div>
               <div className='z-20 mt-10'>
                 <Button
-                  onClick={() => setDisplay(true)}
+                 onClick={() => setDisplay(true)}
                 >
                   Start CTRL + C and CTRL + V
                 </Button>

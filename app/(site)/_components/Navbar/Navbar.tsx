@@ -21,6 +21,9 @@ const Navbar = () => {
         <Link href={'/color-picker'}>
           <span>Color Picker</span>
         </Link>
+        <Link href={'/features'}>
+          <span>Feature</span>
+        </Link>
       </section>
     </nav>
   )

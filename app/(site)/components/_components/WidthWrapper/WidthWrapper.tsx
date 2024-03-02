@@ -3,7 +3,6 @@ import { Divider } from "@nextui-org/react";
 import { Snippet } from "@nextui-org/react";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { CopyBlock } from 'react-code-blocks';
 const code = `
 import React from 'react'
 import { cn } from './utils';

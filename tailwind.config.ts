@@ -102,6 +102,7 @@ const config = {
   plugins: [
     require("tailwindcss-animate"),
     nextui(),
+    addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
