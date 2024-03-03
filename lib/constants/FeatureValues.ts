@@ -1,3 +1,4 @@
+import AddLocalFonts from '@/app/(site)/features/_components/AddLocalFonts/AddLocalFonts';
 import ImplementGoogleAnalytics from '@/app/(site)/features/_components/GoogleAnalaytics/ImplementGoogleAnalytics';
 import Nodemailer from '@/app/(site)/features/_components/NodeMailer/Nodemailer';
 
@@ -12,6 +13,11 @@ export const FeatureAsideValues = [
       label: "Google Analytics",
       onClickValue: "google-analytics",
     },
+    {
+      id: 1,
+      label: "Local Fonts",
+      onClickValue: "local-fonts",
+    },
 ]
 export const FeatureDisplayValues = [
     {
@@ -23,6 +29,11 @@ export const FeatureDisplayValues = [
       id: 1,
       label: "google-analytics",
       componentValue: ImplementGoogleAnalytics,
+    },
+    {
+      id: 1,
+      label: "local-fonts",
+      componentValue: AddLocalFonts,
     },
 ]
 
